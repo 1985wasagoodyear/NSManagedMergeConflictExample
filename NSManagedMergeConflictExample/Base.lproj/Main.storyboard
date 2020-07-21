@@ -1,24 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Test View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TestViewController" customModule="NSManagedMergeConflictExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value in Core Data:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJW-a4-VrW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steve" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAm-Ox-FAA">
+                                <rect key="frame" x="0.0" y="40.5" width="375" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="bJU-ia-B6u">
+                                <rect key="frame" x="0.0" y="411" width="375" height="248"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ue-96-nR8">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="titleEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="errorMergePolicy">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="mergePolicyButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FbW-ao-kJa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WJ-vQ-FFZ">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="48"/>
+                                        <state key="normal">
+                                            <string key="title">mergeByPropertyObjectTrumpMergePolicy
+</string>
+                                        </state>
+                                        <connections>
+                                            <action selector="mergePolicyButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Gy-rJ-ZJ6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnD-Mv-Z6X">
+                                        <rect key="frame" x="0.0" y="100" width="375" height="48"/>
+                                        <state key="normal">
+                                            <string key="title">mergeByPropertyStoreTrumpMergePolicy
+</string>
+                                        </state>
+                                        <connections>
+                                            <action selector="mergePolicyButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jdq-Fn-WNe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6S-gK-vnU">
+                                        <rect key="frame" x="0.0" y="150" width="375" height="48"/>
+                                        <state key="normal">
+                                            <string key="title">overwriteMergePolicy
+</string>
+                                        </state>
+                                        <connections>
+                                            <action selector="mergePolicyButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XOz-A9-DAu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkb-JP-gzR">
+                                        <rect key="frame" x="0.0" y="200" width="375" height="48"/>
+                                        <state key="normal">
+                                            <string key="title">rollbackMergePolicy
+</string>
+                                        </state>
+                                        <connections>
+                                            <action selector="mergePolicyButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AEK-pa-Mu6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qEs-mD-Uih">
+                                <rect key="frame" x="20" y="141" width="157.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zye-w3-v31">
+                                <rect key="frame" x="197.5" y="141" width="157.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Context1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0a-uP-iD6">
+                                <rect key="frame" x="20" y="100.5" width="157.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Context2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANe-Xe-fDF">
+                                <rect key="frame" x="197.5" y="100.5" width="157.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtg-Su-gDn">
+                                <rect key="frame" x="20" y="191" width="157.5" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="context1SaveAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5DC-Up-BSS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZG-vU-nAe">
+                                <rect key="frame" x="197.5" y="191" width="157.5" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="context2SaveAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zhJ-AV-X3B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyj-NL-CAU">
+                                <rect key="frame" x="20" y="261" width="335" height="30"/>
+                                <state key="normal" title="SaveContext1Then2"/>
+                                <connections>
+                                    <action selector="saveBothAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tzp-k2-WGc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bJU-ia-B6u" secondAttribute="bottom" constant="8" id="0nG-qT-xy7"/>
+                            <constraint firstItem="kZG-vU-nAe" firstAttribute="leading" secondItem="Zye-w3-v31" secondAttribute="leading" id="196-wT-tOa"/>
+                            <constraint firstItem="kZG-vU-nAe" firstAttribute="trailing" secondItem="Zye-w3-v31" secondAttribute="trailing" id="3l2-yO-nGf"/>
+                            <constraint firstItem="ANe-Xe-fDF" firstAttribute="top" secondItem="HAm-Ox-FAA" secondAttribute="bottom" constant="30" id="4Fc-kK-ueL"/>
+                            <constraint firstItem="Zye-w3-v31" firstAttribute="trailing" secondItem="ANe-Xe-fDF" secondAttribute="trailing" id="4NG-Db-kRF"/>
+                            <constraint firstItem="qtg-Su-gDn" firstAttribute="leading" secondItem="qEs-mD-Uih" secondAttribute="leading" id="4wN-ZX-7xf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FJW-a4-VrW" secondAttribute="trailing" id="5xD-mi-IcG"/>
+                            <constraint firstItem="a0a-uP-iD6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6x9-ZW-NRY"/>
+                            <constraint firstItem="a0a-uP-iD6" firstAttribute="top" secondItem="HAm-Ox-FAA" secondAttribute="bottom" constant="30" id="9oJ-h8-dF0"/>
+                            <constraint firstItem="kZG-vU-nAe" firstAttribute="top" secondItem="Zye-w3-v31" secondAttribute="bottom" constant="20" id="BbZ-EP-cgR"/>
+                            <constraint firstItem="9ue-96-nR8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kyj-NL-CAU" secondAttribute="bottom" constant="20" id="ExF-Bs-CC0"/>
+                            <constraint firstItem="qEs-mD-Uih" firstAttribute="leading" secondItem="a0a-uP-iD6" secondAttribute="leading" id="GSE-Td-476"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kyj-NL-CAU" secondAttribute="trailing" constant="20" id="H2N-Ey-Ket"/>
+                            <constraint firstItem="Zye-w3-v31" firstAttribute="leading" secondItem="ANe-Xe-fDF" secondAttribute="leading" id="Jyf-UZ-kgH"/>
+                            <constraint firstItem="ANe-Xe-fDF" firstAttribute="leading" secondItem="a0a-uP-iD6" secondAttribute="trailing" constant="20" id="Kue-PP-uXX"/>
+                            <constraint firstItem="qEs-mD-Uih" firstAttribute="trailing" secondItem="a0a-uP-iD6" secondAttribute="trailing" id="Lkh-Lb-s0m"/>
+                            <constraint firstItem="HAm-Ox-FAA" firstAttribute="trailing" secondItem="FJW-a4-VrW" secondAttribute="trailing" id="LuD-2i-Iyj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bJU-ia-B6u" secondAttribute="trailing" id="Re1-2h-qBf"/>
+                            <constraint firstItem="a0a-uP-iD6" firstAttribute="width" secondItem="ANe-Xe-fDF" secondAttribute="width" id="SmC-O3-vdI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ANe-Xe-fDF" secondAttribute="trailing" constant="20" id="aLb-Qw-H4G"/>
+                            <constraint firstItem="kyj-NL-CAU" firstAttribute="top" secondItem="qtg-Su-gDn" secondAttribute="bottom" constant="40" id="ce4-xN-LEM"/>
+                            <constraint firstItem="qtg-Su-gDn" firstAttribute="trailing" secondItem="qEs-mD-Uih" secondAttribute="trailing" id="d3c-OB-LE6"/>
+                            <constraint firstItem="FJW-a4-VrW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hXd-CT-5s9"/>
+                            <constraint firstItem="bJU-ia-B6u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jGR-xA-OPA"/>
+                            <constraint firstItem="qEs-mD-Uih" firstAttribute="top" secondItem="a0a-uP-iD6" secondAttribute="bottom" constant="20" id="n9p-yT-1md"/>
+                            <constraint firstItem="qtg-Su-gDn" firstAttribute="top" secondItem="qEs-mD-Uih" secondAttribute="bottom" constant="20" id="olZ-9t-YuW"/>
+                            <constraint firstItem="Zye-w3-v31" firstAttribute="top" secondItem="ANe-Xe-fDF" secondAttribute="bottom" constant="20" id="qLz-4J-3uW"/>
+                            <constraint firstItem="HAm-Ox-FAA" firstAttribute="top" secondItem="FJW-a4-VrW" secondAttribute="bottom" id="s0F-R2-tzG"/>
+                            <constraint firstItem="kyj-NL-CAU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uR1-p9-rMH"/>
+                            <constraint firstItem="FJW-a4-VrW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yPd-DT-Mhk"/>
+                            <constraint firstItem="HAm-Ox-FAA" firstAttribute="leading" secondItem="FJW-a4-VrW" secondAttribute="leading" id="yWJ-Ah-fZy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="context1TextField" destination="qEs-mD-Uih" id="Ald-lJ-yJ2"/>
+                        <outlet property="context2TextField" destination="Zye-w3-v31" id="zfx-Cv-890"/>
+                        <outlet property="coreDataValueLabel" destination="HAm-Ox-FAA" id="RO1-NN-Ihz"/>
+                        <outletCollection property="mergePolicyButtons" destination="9ue-96-nR8" collectionClass="NSMutableArray" id="2iF-HH-Q6J"/>
+                        <outletCollection property="mergePolicyButtons" destination="0WJ-vQ-FFZ" collectionClass="NSMutableArray" id="zFw-Hu-DVO"/>
+                        <outletCollection property="mergePolicyButtons" destination="lnD-Mv-Z6X" collectionClass="NSMutableArray" id="hs6-KQ-sJe"/>
+                        <outletCollection property="mergePolicyButtons" destination="g6S-gK-vnU" collectionClass="NSMutableArray" id="Qb5-dm-Dlf"/>
+                        <outletCollection property="mergePolicyButtons" destination="gkb-JP-gzR" collectionClass="NSMutableArray" id="HU3-Y6-DVQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="37.600000000000001" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>
